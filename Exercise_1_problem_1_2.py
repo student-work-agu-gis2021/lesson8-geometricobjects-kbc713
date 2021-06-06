@@ -133,7 +133,7 @@ def get_centroid(geom):
 # 
 
 #  YOUR CODE HERE 7 to define some objects
-
+poly1 = create_poly_geom([(45.2, 22.34),(100.22, -3.20),(70.0, 10.20)])
 
 # CODE FOR TESTING YOUR SOLUTION
 centroid = get_centroid(poly1)
@@ -180,6 +180,13 @@ except Exception as e:
 
 
 #  YOUR CODE HERE 9 to define get_length()
+def get_length(geom):
+  """description of get_length function"""
+  assert type(geom) not in [str,int,float,bool,list,tuple],"'geom' should be either LineString or Polygon!"
+  if geom.geom_type == 'LineString':
+        return geom.length
+  elif geom.geom_type == 'Polygon':
+        return geom.exterior.length
 
 # Test and demonstrate the usage of the function:
 
@@ -211,6 +218,7 @@ except Exception as e:
 # Did you add a docstring to all the functions you defined? If not, add them now :) A short one-line docstring is enough in this exercise.
 
 # YOUR ANSWER HERE
+## Yes. I added docstring.
 
 # In addition, you can run the code cell below to check all the docstrings!
 
