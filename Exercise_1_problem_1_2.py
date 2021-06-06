@@ -122,6 +122,12 @@ except Exception as e:
 # 
 
 #  YOUR CODE HERE 6 to define get_centroid()
+def get_centroid(geom):
+  """description of get_centroid function"""
+  assert type(geom) not in [str,int,float,bool,list,tuple]
+  assert geom.geom_type in  ['Point','LineString','Polygon'],"Input should be a Shapely geometry!"
+  geometriccenter = geom.centroid
+  return geometriccenter
 
 # Test and demonstrate the usage of the function. You can, for example, create shapely objects using the functions you created in problem 1 and print out information about their centroids:
 # 
